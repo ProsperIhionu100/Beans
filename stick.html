@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sticky Header Example</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .content {
+    padding: 20px;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>Sticky Header</h1>
+  </div>
+  <div class="content">
+    <p>This is the main content of the page.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    <!-- Add more content here -->
+  </div>
+  <script>
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.header');
+      if (window.scrollY > 0) {
+        header.classList.add('sticky');
+      } else {
+        header.classList.remove('sticky');
+      }
+    });
+  </script>
+</body>
+</html>
